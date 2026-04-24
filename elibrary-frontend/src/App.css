@@ -1,0 +1,77 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  background-color: var(--bg-color);
+  transition: all 0.3s ease;
+}
+
+.main-content.with-chat {
+  margin-right: 320px;
+}
+
+.empty-state {
+  margin-left: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  gap: 20px;
+}
+
+.empty-state h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.empty-state p {
+  color: var(--text-gray);
+  font-size: 18px;
+}
+
+.section-page {
+  margin-left: 260px;
+  padding: 40px 60px;
+  animation: fadeIn 0.5s ease;
+}
+
+.page-header {
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: var(--text-gray);
+  font-size: 16px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 100px 0;
+  color: var(--text-gray);
+  font-style: italic;
+  font-size: 18px;
+  width: 100%;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
