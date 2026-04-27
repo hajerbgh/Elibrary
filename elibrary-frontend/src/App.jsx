@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
+import Category from './pages/Category';
+import Downloads from './pages/Downloads';
+import Settings from './pages/Settings';
+import Help from './pages/Help';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import BookCard from './components/BookCard';
@@ -81,6 +85,14 @@ function App() {
             favorites={favorites}
           />
         )}
+        {activeTab === 'category' && (
+          <Category
+            onToggleLibrary={toggleLibrary}
+            onToggleFavorite={toggleFavorite}
+            library={library}
+            favorites={favorites}
+          />
+        )}
         {activeTab === 'library' && (
           <div className="section-page">
             <header className="page-header">
@@ -98,6 +110,7 @@ function App() {
             </div>
           </div>
         )}
+        {activeTab === 'download' && <Downloads />}
         {activeTab === 'favorite' && (
           <div className="section-page">
             <header className="page-header">
@@ -115,12 +128,8 @@ function App() {
             </div>
           </div>
         )}
-        {!['discover', 'library', 'favorite'].includes(activeTab) && (
-          <div className="empty-state">
-            <h1>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Section</h1>
-            <p>This section is coming soon. Stay tuned!</p>
-          </div>
-        )}
+        {activeTab === 'setting' && <Settings user={user} />}
+        {activeTab === 'help' && <Help />}
       </main>
       {activeTab === 'discover' && <ChatSidebar />}
     </div>

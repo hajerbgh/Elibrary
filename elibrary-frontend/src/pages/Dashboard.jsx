@@ -17,8 +17,8 @@ const Dashboard = ({ user, onToggleLibrary, onToggleFavorite, library, favorites
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const booksRes = await axios.get('http://localhost:5000/api/books');
-        const categoriesRes = await axios.get('http://localhost:5000/api/books/categories');
+        const booksRes = await axios.get('/api/books');
+        const categoriesRes = await axios.get('/api/books/categories');
         setBooks(booksRes.data);
         setCategories(categoriesRes.data);
       } catch (err) {

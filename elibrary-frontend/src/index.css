@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary-color: #6C5CE7;
+  --primary-color: #6366f1;
+  --primary-dark: #4f46e5;
   --bg-color: #F8F6F1;
   --sidebar-bg: #FFFFFF;
   --text-dark: #2D3436;
