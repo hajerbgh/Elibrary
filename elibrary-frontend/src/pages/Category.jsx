@@ -18,12 +18,14 @@ const Category = ({ onToggleLibrary, onToggleFavorite, library, favorites }) => 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const booksRes = await axios.get('/api/books');
-        const categoriesRes = await axios.get('/api/books/categories');
-        setBooks(booksRes.data);
-        setCategories(categoriesRes.data);
+        const booksRes = await axios.get('http://localhost:5000/api/books');
+        const categoriesRes = await axios.get('http://localhost:5000/api/books/categories');
+        setBooks(Array.isArray(booksRes.data) ? booksRes.data : []);
+        setCategories(Array.isArray(categoriesRes.data) ? categoriesRes.data : []);
       } catch (err) {
         console.error("Error fetching data:", err);
+        setBooks([]);
+        setCategories([]);
       } finally {
         setLoading(false);
       }

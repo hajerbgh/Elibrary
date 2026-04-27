@@ -12,7 +12,7 @@ const Signup = ({ onSignupSuccess, onSwitchToLogin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/auth/signup', { name, email, password });
+      await axios.post('http://localhost:5000/api/auth/signup', { name, email, password });
       onSignupSuccess();
     } catch (err) {
       setError(err.response?.data?.error || 'Signup failed');
